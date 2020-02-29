@@ -7,6 +7,9 @@ $('#test').off('keypress').on('keypress', function(e) {
     if (regex.test($(this).val()) && e.key === '.') {
         e.preventDefault();
     }
+    if (e.key === '-' && e.target.selectionStart !== 0) {
+        e.preventDefault();
+    }
     regex = RegExp(/-/);
     if (regex.test($(this).val()) && e.key === '-') {
         e.preventDefault();
